@@ -1,0 +1,56 @@
+import java.util.Arrays;
+
+public class Student {
+    private String surname;
+    private int groupNumber;
+    private int[] marks = new int[5];
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getGroupNumber() {
+        return groupNumber;
+    }
+
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
+    }
+
+    public int[] getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int[] marks) {
+        this.marks = marks;
+    }
+
+    public Student(String surname, int groupNumber, int[] marks) {
+        this.surname = surname;
+        this.groupNumber = groupNumber;
+        this.marks = marks;
+    }
+
+    public void maxMark() {
+        int max = marks[0];
+        for (int i = 0; i < marks.length; i++) {
+         if (marks[i] > max){
+             marks[i] = max;
+         }
+        }
+        System.out.println(max);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "surname='" + surname + '\'' +
+                ", groupNumber=" + groupNumber +
+                ", marks=" + Arrays.toString(marks) +
+                '}';
+    }
+}
